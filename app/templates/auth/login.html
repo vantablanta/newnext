@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container-fluid login">
+    {% include 'navbar.html' %}
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="login">
+            <h3 class="text-center">
+                <i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp; 
+                <strong>Login</strong>
+            </h3>
+            <form action="" method="POST" class="form-group">
+
+                <div class="mb-3">
+                {{form.hidden_tag()}}
+
+                {% if form.errors %}
+                {{form.errors['username']}}
+                {{form.errors['password']}}
+                {%endif%}
+                </div>
+           
+                <div class="mb-3">
+                    {{form.username.label(class='form-label')}}
+                    {{form.username(class='form-control')}}
+                </div>
+
+                <form action="" method="POST" class="form-group">
+                    {{form.hidden_tag()}}
+
+                    {% if form.errors %}
+                    {{form.errors['email']}}
+                    {{form.errors['password']}}
+                    {{form.errors[' password_confirm']}}
+                    {%endif%}
+
+
+                <div class="mb-3">
+                    {{form.password.label(class='form-label')}}
+                    {{form.password(class='form-control')}}
+                </div>
+
+                <div class="mb-3">
+                    {{form.remember.label(class='form-label')}}
+                    {{form.remember}}
+                </div>
+
+                <div class="mb-3">
+                    {{form.submit(class='btn login-btn')}}
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

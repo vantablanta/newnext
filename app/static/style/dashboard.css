@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Varela Round", sans-serif;
+
+}
+
+
+p {
+    margin: 0;
+}
+
+.container {
+    margin: 20px auto;
+    
+}
+
+.box {
+    background-color: #163469;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.row {
+    background-color: #f1f2f6;
+    border: 1px solid #f1f2f6;
+    border-radius: 10px;
+
+}
+
+.viewbox {
+    margin-left: 0px;
+    padding: 10px 20px;
+}
+
+.pink {
+    color: #f96b6b;
+    font-size: 30px;
+}
+
+.card {
+    margin: 20px 0;
+    padding: 20px 30px;
+}
+
+.mx1 {
+    margin: 0 1px;
+}
+
+
+
+.textmuted {
+    color: #7a7a7a;
+    font-size: 14px;
+}
+
+.fas {
+    font-size: 20px;
+    color: #636363;
+    padding-right: 20px;
+}
+
+.box2 {
+    background-color: #f1f2f6;
+    border: 1px solid #f1f2f6;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.icon1 {
+    font-size: 10px;
+    position: absolute;
+    background-color: #FFFF;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    right: 0;
+    top: -10px;
+}
+
+.icon2 {
+    font-size: 10px;
+    position: absolute;
+    background-color: #FFFF;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    left: 50%;
+    top: -10px;
+}
+
+.far.fa-star {
+    font-size: 10px;
+    padding: 10px;
+}
+
+.fas.fa-check {
+    font-size: 10px;
+    padding: 10px;
+    color: #237518;
+}
+ #add{
+    color: #163469 !important; 
+}

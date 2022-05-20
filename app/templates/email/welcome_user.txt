@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Next Door
+We have just seen you have signed up to our application and we want to welcome you to the your new hood. Enjoy browsing around

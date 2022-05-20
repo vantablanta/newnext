@@ -1,0 +1,197 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+<div class="hero-section">
+  <div class="d-flex justify-content-between">
+    <div class="add-hood-logo ">
+      <span class="fs-4">
+          <a href="{{url_for('main_blueprint.home')}}"> <i class="fa fa-circle" style='color: #fa6b6b;' aria-hidden="true"></i>ND</a>
+      </span>
+  </div>
+
+
+    <div class="">
+      {% include 'navbar.html' %}
+    </div>
+
+
+  </div>
+  
+  <div class="hero-text ps-5 pt-5">
+    <h1 class="text-light">Nextdoor</h1>
+    <p style="color: #fff;">Search for your Neighborhood,Town or City</p>
+  </div>
+</div>
+
+<div class="search_layout">
+  <div class="search_bar">
+
+    <form action="">
+      <input type="text" label="search_id" class="form-control" placeholder="Search Hood" name="searched" />
+    </form>
+    <button type="submit">Search</button>
+  </div>
+</div>
+
+<div class="about">
+  <div class="about_text">
+    <h2>All your neighborhood Questions in one place with Nextdoor</h2>
+    <p>
+      Its where communities come together to greet newcomers, exchange
+      recommendations, and read the latest local news. Where neighbors support
+      local businesses and get updates from public agencies. Where neighbors
+      borrow tools and sell couches. Its how to get the most out of everything
+      nearby. Welcome, neighbor.
+    </p>
+  </div>
+
+  <div class="app-icons">
+    <div>
+      <span class="material-symbols-outlined"> security_update_good </span>
+      <p>
+        Relevant news and information from neighbors, businesses, and public
+        agencies in real time.
+      </p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined"> edit_location </span>
+      <p>
+        The only way to instantly connect to the people, businesses, and
+        happenings near your home.
+      </p>
+    </div>
+    <div>
+      <span class="material-symbols-outlined"> cottage </span>
+      <p>A secure environment where all neighbors are verified.</p>
+    </div>
+
+  </div>
+
+  <div class="vector_text text-center">
+    <p>Instantly connect with your neighborhood</p>
+    <button><a href="/auth/signup">Sign Up</a></button>
+  </div>
+</div>
+
+<div class="app_content">
+  <div class="app_vect">
+    <img src="{{url_for('static', filename='/images/phone.jpg')}}" alt="" />
+  </div>
+  <div class="app_text">
+    <h3>The go-to app for questions regarding your hood</h3>
+    <p>
+      Download the free Nextdoor app for expertise you can count on,<br />
+      and fit into your living area with confidence.
+    </p>
+
+    <div>
+      <span class="material-symbols-outlined"> contact_support </span>
+      Support on your journey
+    </div>
+    <div>
+      <span class="material-symbols-outlined"> tips_and_updates </span>Updates
+      and reminders
+    </div>
+    <div class="app_badges">
+      <img src="{{url_for('static', filename='/images/apple.png')}}" alt="apple-badge" />
+      <img id="google" src="{{url_for('static', filename='/images/google-play-badge.png')}}" alt="" />
+    </div>
+  </div>
+</div>
+
+<div class="popular">
+  <div class="popular-text">
+    <h3>Some Popular Hoods</h3>
+    <p>Choose between popular hoods and get to know all there is about them</p>
+  </div>
+
+  <div class="popular-images1">
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh1.jpg')}}" alt="hood image" />
+      <p>Lower Kabete</p>
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh2.jpg')}}" alt="hood image" />
+      <p>Roysambu</p>
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh3.jpg')}}" alt="hood image" />
+      <p>Kikuyu</p>
+    </div>
+    <img src="" alt="" />
+  </div>
+
+  <div class="popular-images2">
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh4.jpg')}}" alt="hood image" />
+      <p>Juja</p>
+
+
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh5.jpg')}}" alt="hood image" />
+      <p>Ruai</p>
+    </div>
+    <div class="img_pop">
+      <img src="{{url_for('static', filename='/images/nbh6.jpg')}}" alt="hood image" />
+      <p>Mlolongo</p>
+    </div>
+    <img src="" alt="" />
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid justify-content-center px-0 ">
+  <footer>
+    <div class="row justify-content-around mb-0 pt-5 mx-4">
+      <div class="col-xl-2 col-md-4 order-xl-1 order-4 mr-xl-0 my-auto">
+        <ul class="list-unstyled mt-md-3 mt-5">
+          <li>Social Media</li>
+          <li class="social"> <span> <i class="fa fa-facebook" aria-hidden="true"></i></span> <span> <i
+                class="fa fa-instagram" aria-hidden="true"></i> </span> <span> <i class="fa fa-twitter"
+                aria-hidden="true"></i> </span> </li>
+        </ul>
+        <ul class="list-unstyled my-xl-4 my-md-3"></ul>
+      </div>
+      <div class="col-xl-2 col-md-3 pt-4 order-1">
+        <ul class="list-unstyled">
+          <li class="mt-md-0 mt-4">Our Solution</li>
+          <li>Intergrated Security </li>
+          <li>Core Features</li>
+          <li>Product Features</li>
+          <li>Pricing</li>
+        </ul>
+      </div>
+      <div class="col-xl-2 col-md-3 pt-4 order-2">
+        <ul class="list-unstyled">
+          <li class="mt-md-0 mt-4">Your needs</li>
+          <li>Intergrated Security </li>
+          <li>Core Features</li>
+          <li>Product Features</li>
+          <li>Pricing</li>
+        </ul>
+      </div>
+      <div class="col-xl-auto col-md-3 pt-4 my-sm-0 order-md-3 order-sm-1 ">
+        <ul class="list-unstyled">
+          <li class="mt-md-0 mt-4">Offer</li>
+          <li>Intergrated Security </li>
+          <li>Core Features</li>
+          <li>Product Features</li>
+          <li>Pricing</li>
+        </ul>
+      </div>
+      <div class="col-xl-auto col-md-6 col-12  pt-4 my-sm-0 order-6  ">
+        <div class="form-group "><label for="email" class="mb-3"><b>Subscribe to our newsletter and Get 10%
+              off</b></label><input type="email" class="form-control form-control-lg" placeholder="Enter email"
+            id="email"></div><button type="button"
+          class="btn btn-primary btn-lg btn-block my-2 Subscribe mt-4 mb-3">Subscribe</button>
+      </div>
+    </div>
+
+  </footer>
+</div>
+
+{%endblock%}

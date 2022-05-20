@@ -1,0 +1,65 @@
+{%block styles%}
+<link rel="stylesheet" href="{{url_for('static', filename=" style/style.css")}}">
+<link rel="stylesheet" href="{{url_for('static', filename=" style/font-awesome.min.css")}}">
+{%endblock%}
+
+<nav class="navbar navbar-expand-lg ps-3">
+  <div class="container-fluid">
+
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+      <a class="navbar-brand" href="#"></a>
+
+      <div class="logo">
+        <i class="fa fa-circle fs-5" style='color: #fa6b6b;' aria-hidden="true"></i>
+        <span class="fs-4">
+          <a class="navbar-brand" href="{{url_for('main_blueprint.home')}}">Logo</a></span>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+        <a class="navbar-brand" href="#"></a>
+
+        <span class="fs-4">
+          <a href="{{url_for('main_blueprint.home')}}"> <i class="fa fa-circle" style='color: #fa6b6b;' aria-hidden="true"></i>ND</a>
+      </span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            {%if current_user.is_authenticated%}
+            <li class="nav-item">
+              <a class=" avn nav-link fs-6" href="/all_hoods">Hoods</a>
+            </li>
+            <li class="nav-item">
+              <a class=" avn nav-link fs-6" href="/dashboard">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class=" avn nav-link fs-6" href="/auth/logout">Logout</a>
+            </li>
+
+            {%else%}
+            <li class="nav-item">
+              <a class=" avn nav-link fs-6" href="/auth/signup">Signup</a>
+            </li>
+            <li class="nav-item">
+              <a class="avn nav-link fs-6" href="/auth/login">Login</a>
+            </li>
+            {%endif%}
+
+          </ul>
+
+          <!-- <form class="d-flex" role="search">
+        <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+        </div>
+  </div>
+</nav>

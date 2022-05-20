@@ -1,0 +1,116 @@
+{%extends 'base.html'%}
+
+{%block body%}
+<div class="container-fluid add-hood pt-3">
+    <div class="d-flex justify-content-between">
+        <div class="add-hood-logo ">
+            <span class="fs-4">
+                <a href="{{url_for('main_blueprint.home')}}"> <i class="fa fa-circle" style='color: #fa6b6b;' aria-hidden="true"></i>ND</a>
+            </span>
+        </div>
+        <div class="add-hood-profile-section pe-5">
+            {%if current_user.is_authenticated%}
+            <ul class="navbar-nav ">
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profile
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li>
+                            <a class="dropdown-item" href="/dashboard"><i class="fa fa-user" aria-hidden="true"></i>Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/all_hoods"><i class="fa fa-handshake-o"></i>Hoods</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/auth/logout"><i class="fa fa-sign-out"></i>Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            {%endif%}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid add-hood-form ps-5">
+    <div class="row">
+        <div class="col-md-6 pt-5 pe-5 mb-5">
+
+            <div class="fs-1">
+                <div class="">
+                    <div style="background-color: #fff7ed;color: #d08035;"
+                        class="border-rounded card border-warning border-warning">
+                        <div class="p-3" style="font-size: 20px;">
+                            <strong>
+                                <h5 style="font-weight:bold">
+                                    <i class="fa fa-exclamation-circle" style="color: #f7af48" aria-hidden="true"></i>
+                                    Keep Your Hood Safe
+                                </h5>
+                            </strong>
+                            <p>
+                                <a style="font-size:15px; text-decoration: none;color: #d08035" href="">
+                                    Check Safety Tips
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fs-1 mt-5 border-rounded ">
+                <div class='border-rounded'
+                    style="box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">
+                    <div class="border-rounded card ">
+                        <div class="p-3" style="font-size: 20px;">
+                            <strong>
+                                <h5 style="color: #163469; font-weight:bold">
+                                    <i class="fa fa-heart" style="color: #163469" aria-hidden="true"></i>
+                                    Community Love
+                                </h5>
+                            </strong>
+                            <p>
+                                <a style="font-size:15px; text-decoration: none;color: #163469" href="">
+                                    Let people know how awesome your hood is {{ share.create() }}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 pt-5 pe-5 mb-5">
+            <div class="form-group form-control">
+                <p class="fs-3 text-center p-2 mt-4">List Your Hood</p>
+
+                <form enctype=multipart/form-data method="POST" class="p-3">
+                    <div class="mb-3">
+                        {{form.hidden_tag()}}
+                        {% if form.errors %}
+                        {{form.errors['username']}}
+                        {{form.errors['password']}}
+                        {%endif%}
+                    </div>
+
+                    <div class="mb-3">
+                        {{form.name.label(class='form-label')}}
+                        {{form.name(class='form-control')}}
+                    </div>
+
+                    <div class="mb-3">
+                        {{form.about.label(class='form-label')}}
+                        {{form.about(class='form-control')}}
+                    </div>
+                    <div class="mb-3">
+                        {{form.hood_pic.label(class='form-label')}}
+                        {{form.hood_pic(class='form-control')}}
+                    </div>
+                    <div class="mb-3">
+                        {{form.submit(class='btn hood-btn rounded mt-3')}}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

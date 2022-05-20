@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+flask = "*"
+flask-wtf = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+autopep8 = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+flask-login = "*"
+gunicorn = "*"
+flask-uploads = "*"
+flask-share = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.8"

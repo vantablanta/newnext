@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+
+{%block body%}
+<div class="container">
+    <nav class="nav-part">
+        <ul class="ul pt-3 ps-2">
+            <p class="text-light fs-1 bold">NextDoor</p>
+            <li class="li"><a class='a' href="/"><i class="fa fa-home fs-3"></i>&nbsp;Home</a></li>
+            <li class="li"><a class='a' href="/dashboard"><i class="fa fa-book fs-3"></i>&nbsp;  Profile</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<div class="wrapper">
+    <div class="section">
+        <div class="box-area">
+            <button class="btn float-end add-hood-btn mt-4 me-3 text-light">
+                <a class="nav-link fs-6 text-light fw-bold" href="/add_hood">
+                    <i class="fa fa-plus text-light" aria-hidden="true"></i>
+                    Add Hood
+                </a>
+            </button>  
+            <div class="container mt-5 pt-4  row">
+                    {%for hood in hoods%}
+                        <div class="card me-3 mb-3 col-md-4" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Name: {{hood['name']}}</h5>
+                                <p class="card-text">About: {{hood['about']}}</p>
+                                <hr>
+                                <p>Admin: {{hood['user_id']}}</p>
+                                <p>Members: {{hood['members']}}</p>
+
+                                <a class="btn join-btn" href="{{url_for('main_blueprint.hoodpage', hood_id=hood.id)}}">View</a>
+                               </form>
+                            </div>
+                        </div>
+                    {%endfor%}
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+
